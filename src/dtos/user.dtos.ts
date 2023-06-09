@@ -18,9 +18,6 @@ export class UserDtosRegister {
   @IsNotEmpty({
     message: 'O campo email não pode ser vazio.',
   })
-  @Length(3, 50, {
-    message: 'O campo email não pode ser vazio.',
-  })
   @IsEmail()
   email: string;
 
@@ -37,6 +34,19 @@ export class UserDtosRegister {
   })
   @Length(8, 50, {
     message: 'O campo password deve ter entre 8 a 50 caracteres.',
+  })
+  password: string;
+}
+
+export class UserDtosLogin {
+  @IsNotEmpty({
+    message: 'O campo email não pode ser vazio.',
+  })
+  @IsEmail()
+  email: string;
+
+  @IsNotEmpty({
+    message: 'O campo password não pode ser vazio.',
   })
   password: string;
 }
